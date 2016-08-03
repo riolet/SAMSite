@@ -1,15 +1,18 @@
 $def with (menuItems, selected)
-<div class="ui black inverted menu" id="navbar">
-    <div class="header item">
-        <i class="home icon"></i>
-        <a href="/">Systems Architecture Mapper</a>
+<div class="ui borderless inverted main menu" id="navbar">
+    <div class="ui text container">
+        <div class="header item">
+            <img class="logo" src="static/img/logo.png">
+            <a href="/"><i class="map outline icon big"></i>
+            Systems Architecture Mapper</a>
+        </div>
+        $for menuItem in menuItems:
+            $ active = ''
+            $if menuItem['name']==selected:
+                $ active = 'active'
+            <a class="item $active" href="$menuItem['link']">
+                <i class="$menuItem['icon'] icon"></i>
+                $menuItem['name']
+            </a>
     </div>
-    $for menuItem in menuItems:
-        $ active = ''
-        $if menuItem['name']==selected:
-            $ active = 'active'
-        <a class="item $active" href="$menuItem['link']">
-            <i class="$menuItem['icon'] icon"></i>
-            $menuItem['name']
-        </a>
 </div>

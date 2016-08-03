@@ -5,6 +5,7 @@ import pages.home
 urls = (
     '/', 'pages.home.Home',
     '/map', 'pages.home.Home',
+    '/about', 'pages.home.Home',
 )
 
 

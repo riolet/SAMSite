@@ -6,7 +6,12 @@ navbar = [
         "name": "Map",
         "icon": "sitemap",
         "link": "/map"
-    }
+    },
+    {
+        "name": "About",
+        "icon": "info",
+        "link": "/about"
+    },
 ]
 
 # tell renderer where to look for templates
