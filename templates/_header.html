@@ -1,10 +1,8 @@
 $def with (menuItems, selected)
 <div class="ui borderless inverted main menu" id="navbar">
-    <div class="ui text container">
+    <div class="ui container">
         <div class="header item">
-            <img class="logo" src="static/img/logo.png">
-            <a href="/"><i class="map outline icon big"></i>
-            Systems Architecture Mapper</a>
+            <a href="/"><img class="logo ui middle aligned mini image" src="static/img/logo.png">&nbsp;&nbsp;Systems Architecture Mapper</a>
         </div>
         $for menuItem in menuItems:
             $ active = ''

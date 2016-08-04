@@ -6,8 +6,10 @@ import pages.home
 # Manage routing from here. Regex matches URL and chooses class by name
 urls = (
     '/', 'pages.home.Home',
-    '/demo', 'pages.home.Home',
+    '/demo', 'pages.map.Map',
     '/about', 'pages.home.Home',
+    '/query', 'pages.query.Query',
+    '/details', 'pages.details.Details'
 )
 
 
