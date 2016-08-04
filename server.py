@@ -9,6 +9,11 @@ urls = (
 )
 
 
+# For development testing, uncomment these 3 lines
 if __name__ == "__main__":
     app = web.application(urls, globals())
     app.run()
+
+# For apache2 mod_wsgi deployment, uncomment these two lines
+# app = web.application(urls, globals(), autoreload=False)
+# application = app.wsgifunc()
