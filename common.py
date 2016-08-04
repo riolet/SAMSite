@@ -4,15 +4,15 @@ import web
 
 navbar = [
     {
-        "name": "Map",
+        "name": "Demo",
         "icon": "sitemap",
-        "link": "/map"
+        "link": "/demo"
     },
     {
-        "name": "Stats",
-        "icon": "filter",
-        "link": "/stats"
-    }
+        "name": "About",
+        "icon": "info",
+        "link": "/about"
+    },
 ]
 
 # tell renderer where to look for templates
