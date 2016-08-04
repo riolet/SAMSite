@@ -1,5 +1,5 @@
 import sys, os
-abspath = os.path.dirname(__file__)
+base_path = os.path.dirname(__file__)
 import web
 
 navbar = [
@@ -9,14 +9,14 @@ navbar = [
         "link": "/map"
     },
     {
-        "name": "About",
-        "icon": "info",
-        "link": "/about"
-    },
+        "name": "Stats",
+        "icon": "filter",
+        "link": "/stats"
+    }
 ]
 
 # tell renderer where to look for templates
-render = web.template.render(os.path.join(abspath, 'templates/'))
+render = web.template.render(os.path.join(base_path, 'templates/'))
 
 try:
     sys.dont_write_bytecode = True
@@ -44,7 +44,6 @@ def IPtoString(ipNumber):
         (ipNumber & 0xFF0000) >> 16,
         (ipNumber & 0xFF00) >> 8,
         ipNumber & 0xFF)
-
 
 def IPtoInt(a, b, c, d):
     """
