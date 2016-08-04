@@ -7,7 +7,7 @@ import pages.home
 urls = (
     '/', 'pages.home.Home',
     '/demo', 'pages.map.Map',
-    '/about', 'pages.home.Home',
+    '/about', 'pages.about.About',
     '/query', 'pages.query.Query',
     '/details', 'pages.details.Details'
 )

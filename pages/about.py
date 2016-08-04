@@ -9,6 +9,6 @@ class About:
                                        stylesheets=["/static/css/home.css"],
                                        scripts=["/static/js/about.js"])) \
              + str(common.render._header(common.navbar, self.pageTitle)) \
-             + str(common.render.home("What, How, Why")) \
+             + str(common.render.about("What, How, Why")) \
              + str(common.render._footer()) \
              + str(common.render._tail())

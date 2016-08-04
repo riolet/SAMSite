@@ -9,6 +9,6 @@ class Home:
              # + str(common.render._header(common.navbar, self.pageTitle)) \
         return str(common.render._head(self.pageTitle,
                                        stylesheets=["/static/css/home.css"])) \
-             + str(common.render.about(self.pageTitle)) \
+             + str(common.render.home(self.pageTitle)) \
              + str(common.render._footer()) \
              + str(common.render._tail())
