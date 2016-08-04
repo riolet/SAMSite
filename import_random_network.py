@@ -19,13 +19,11 @@ class Node:
         self.number = ip
         self.parent = parent
         self.children = {}
-        self.server = False
-        self.client = False
         self.ports = []
         self.init_ports()
 
     def init_ports(self):
-        count = int(round(math.fabs(random.gauss(0, 6)) + 1))
+        count = int(round(math.fabs(random.gauss(0, 5)) + 1))
         for i in range(count):
             self.ports.append(randomPort())
 
@@ -46,6 +44,23 @@ class Node:
     def random_port(self):
         return random.choice(self.ports)
 
+    def get_as_int(self):
+        if self.parent != None:
+            return (self.parent.get_as_int() << 8) + self.number
+        return self.number
+
+    def can_add_source(self, source):
+        return True
+
+    def add_source(self, source):
+        pass
+
+    def can_add_dest(self, dest):
+        return True
+
+    def add_dest(self, dest):
+        pass
+
     def __str__(self):
         return self.address
 
@@ -58,26 +73,28 @@ class Node:
     def __ne__(self, other):
         return not self.__eq__(other)
 
-    def get_as_int(self):
-        if self.parent != None:
-            return (self.parent.get_as_int() << 8) + self.number
-        return self.number
 
-
+# Generates a stream of numbers in range [1, 254].
 def gen_ips(numerator):
-    denominator = 256
+    denominator = 254
     if numerator > denominator:
         raise Exception("Cannot yield more than " + str(denominator) + "ips")
     while numerator > 0:
         if random.randint(0, denominator) <= numerator:
-            yield denominator - 1
+            yield denominator
             numerator -= 1
         denominator -= 1
     return
 
+
 def randomPort():
-    if random.random() < 0.8:
-        return random.randint(2, 1023)
+    rand = random.random()
+    if rand < 0.07:
+        return 80
+    elif rand < 0.2:
+        return 443
+    elif random.random() < 0.8:
+        return int(math.fabs(random.gauss(300, 300)))
     else:
         return random.randint(1024, 65535)
 
@@ -107,7 +124,7 @@ def generate_nodes():
     clients_and_servers8 = Node(None, cs_cluster, "clients and servers")
     gen16 = gen_ips(random.randint(2, 4)) # 12.xx
     for ip16 in gen16:
-        node16 = Node(clients8, ip16)
+        node16 = Node(clients_and_servers8, ip16)
         gen24 = gen_ips(random.randint(1, 5)) # 12.34.xx
         for ip24 in gen24:
             node24 = Node(node16, ip24)
@@ -122,11 +139,11 @@ def generate_nodes():
     servers8 = Node(None, s_cluster, "servers")
     gen16 = gen_ips(random.randint(1, 2)) # 12.xx
     for ip16 in gen16:
-        node16 = Node(clients8, ip16)
-        gen24 = gen_ips(random.randint(1, 2)) # 12.34.xx
+        node16 = Node(servers8, ip16)
+        gen24 = gen_ips(random.randint(8, 16)) # 12.34.xx
         for ip24 in gen24:
             node24 = Node(node16, ip24)
-            gen32 = gen_ips(random.randint(8, 16)) # 12.34.56.xx
+            gen32 = gen_ips(random.randint(1, 2)) # 12.34.56.xx
             for ip32 in gen32:
                 node32 = Node(node24, ip32)
                 node24.add_child(node32)
@@ -159,11 +176,11 @@ def gen_links(c, cs, s):
     while True:
         # choose source
         rand = random.random()
-        if rand < 0.6:
+        if rand < 0.7:
             source = c.random_host()
-        elif rand < 0.98:
-            source = cs.random_host()
         elif rand < 0.995:
+            source = cs.random_host()
+        elif rand < 0.999:
             source = s.random_host()
         else:
             ip = random.randint(1, 254)
@@ -179,14 +196,23 @@ def gen_links(c, cs, s):
         elif rand < 0.99:
             dest = cs.random_host()
         else:
-            dest = c.random_host
+            dest = c.random_host()
 
-        yield (source.get_as_int(), random.randint(16384, 65535), dest.get_as_int(), dest.random_port())
+        if source == dest:
+            continue
+
+        if dest.can_add_source(source) and source.can_add_dest(dest):
+            dest.add_source(source)
+            source.add_dest(dest)
+            occurences = int(math.fabs(random.gauss(0, 100))) + 1
+            destPort = dest.random_port()
+            for i in range(occurences):
+                yield (source.get_as_int(), random.randint(16384, 65535), dest.get_as_int(), destPort)
 
 
 def import_random():
-    lines_to_import = 10
-    line_num = -1
+    lines_to_import = 10000
+    line_num = 0
     lines_inserted = 0
     counter = 0
     row = {"SourceIP": "", "SourcePort": "", "DestinationIP": "", "DestinationPort": ""}
@@ -197,10 +223,10 @@ def import_random():
         line_num += 1
 
         a, b, c, d = gen.next()
-        rows[counter]["SourceIP"] = a
-        rows[counter]["SourcePort"] = b
-        rows[counter]["DestinationIP"] = c
-        rows[counter]["DestinationPort"] = d
+        rows[counter]["SourceIP"] = str(a)
+        rows[counter]["SourcePort"] = str(b)
+        rows[counter]["DestinationIP"] = str(c)
+        rows[counter]["DestinationPort"] = str(d)
 
         counter += 1
 
