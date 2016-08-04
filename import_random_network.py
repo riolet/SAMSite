@@ -7,7 +7,7 @@ import os
 import json
 import common
 import dbaccess
-
+import traceback
 
 class Node:
     def __init__(self, parent, ip, alias=""):
@@ -270,6 +270,9 @@ def insert_data(rows, count):
         else:
             print("Critical failure.")
             print(e.message)
+            print '-'*60
+            traceback.print_exc(file=sys.stdout)
+            print '-'*60
             sys.exit(2)
 
 if __name__ == "__main__":
