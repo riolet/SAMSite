@@ -82,6 +82,12 @@ function init() {
     });
     $(".input.icon").popup();
     $("table.sortable").tablesort();
+    $('.message .close')
+      .on('click', function() {
+        $(this)
+          .closest('.message')
+          .transition('fade');
+    });
 
     loadData();
 }
