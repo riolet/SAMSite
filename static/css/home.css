@@ -1,5 +1,6 @@
 body {
-    background-color: #AAFFDD;
+    /*background-color: #AAFFDD;*/
+    background-color: #CCFFEB;
     font-size: 120%;
 }
 .ui.footer.segment {
@@ -9,4 +10,7 @@ body {
 .main.container {
     margin-top: 2em;
     margin-bottom: 2em;
+}
+#screen {
+    border-width: 3px;
 }
