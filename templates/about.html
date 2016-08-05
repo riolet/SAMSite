@@ -1,39 +1,34 @@
 $def with (title)
 <div class="ui text container">
-    <h1 class="ui header">$title</h1>
+    <!--<h1 class="ui header">$title</h1>-->
     <div class="ui raised segment">
         <h2 class="ui dividing header">What is SAM?</h2>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-            Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-            Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
-            Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
-            Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>System Architecture Mapper (SAM) is an interactive network-traffic mapping tool.</p>
+        <p>It is designed to show how different nodes interact on a network, based off a log of connections formed over a period of time.</p>
+        <p>At it’s simplest, SAM will show you which IP addresses are connecting to which other IPs.  One step above that and you’re can see which ports are being connected to on which hosts, and start to filter your graph based on that information.</p>
+        <p>The purpose is to give a visual representation of the state of a network and its traffic.  This is useful in both an exploratory and an evaluatory sense.  In the exploratory sense, it gives you reference for the current state of affairs and allows you to see where traffic is going.  In the evaluatory sense, you can compare the network data with the architected intention of your network and see whether the system is working as intended.</p>
+    </div>
+    <div class="ui raised segment">
+        <h2 class="ui dividing header">Current State of Affairs</h2>
+        <p>As it is now, SAM maps IP addresses in layers based on subnets /8 /16 /24 and /32 by following a fractal 16x16 grid.  Connections between nodes (subnets or hosts) are drawn as arrows pointing from source to destination IPs.  When you zoom in to the host level, you can also view the ports on which each host is being connected to.</p>
+        <p>Once you’re familiar with the network, you can jump directly to an IP by searching for that host or subnet specifically.  Searching is done using the search bar at the top by using the dotted decimal notation.  To reset your view just tap ‘f’ over the map.  Clicking the gear next to the search bar opens up a few options including filtering by port number.</p>
+        <p>The sidebar on the right shows a few more details about the node you have selected.  Connections coming into the node, connections going out from the node, and any ports in use on the node.  The ports list can be enlightening as to what services a particular server is offering.  For example 80 and 443 are http[s] and suggest a host is acting as a webserver.  If there are connections to 3306, that host is probably also accepting MySQL connections.</p>
     </div>
     <div class="ui raised segment">
         <h2 class="ui dividing  header">Current Limitations</h2>
-        <img class="ui medium left floated image" data-src="assets/images/wireframe/square-image.png">
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-            Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-            Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
-            Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
-            Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>The data used by SAM is currently limited to IPs and ports for TCP traffic data, with all other information is discarded.  SAM is capable of importing data from PaloAlto syslog files, and from nfcapd binary files.  Creating an importer for your own log files currently requires adapting an existing python script.  This is an intentional simplification of the problem and more options will be available in the future.</p>
+        <p>SAM is also currently limited to using MySQL for its database and, again, you will have more options in the future. </p>
     </div>
     <div class="ui raised segment">
         <h2 class="ui dividing header">Next Steps</h2>
-        <img class="ui medium right floated image" data-src="assets/images/wireframe/square-image.png">
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-            Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-            Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
-            Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
-            Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <p>A network log will often record information such as IPs, ports, protocol used, payload size, number of connections, duration of connections, timestamps, and more to allow many more dimensions of information to be displayed on the map.  This will provide an ever-increasingly comprehensive visualization of network traffic.</p>
+        <p>Many of these options will be displayed visually as well. For example different colored connections for different protocols, or line thicknesses for number of connections, or total data transfered.</p>
+        <p>One of the next features to be developed will be aliasing for hosts and ports so that you can assign more meaningful names to the nodes in the graph.  Instead of subnet 24.0.0.0/8, you could read West Office or instead of 136.72.44.16, you could read Jamie.</p>
     </div>
     <div class="ui raised segment">
-        <h2 class="ui dividing header">The Future of SAM</h2>
-        <img class="ui medium right floated image" data-src="assets/images/wireframe/square-image.png">
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-            Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-            Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
-            Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.
-            Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <h2 class="ui dividing header">The Future</h2>
+        <p>SAM also maps a mere snapshot of a network, but it need not be merely a snapshot.  In the future the service could continuously integrate new data from a live network and provide realtime visual feedback on the health of your network.</p>
+        <p>SAM can go beyond merely reporting network data as well.  SAM will eventually be able to collect more detailed information about hosts, such as their resource usage or idle time.</p>
+        <p>Another possibility is to give administrative capabilities to SAM and use the network map as a control panel to block and allow IP addresses, trigger the rebooting or the reimaging of nodes, or configuring quotas for different types of traffic or network jobs.</p>
     </div>
 </div>
