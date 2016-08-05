@@ -2,7 +2,7 @@ import common
 
 
 class About:
-    pageTitle = "System Architecture Mapper"
+    pageTitle = "About"
 
     def GET(self):
         return str(common.render._head(self.pageTitle,
