@@ -9,6 +9,11 @@ navbar = [
         "link": "/demo"
     },
     {
+        "name": "Stats",
+        "icon": "filter",
+        "link": "/stats"
+    },
+    {
         "name": "About",
         "icon": "info",
         "link": "/about"
