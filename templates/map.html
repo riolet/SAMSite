@@ -1,4 +1,6 @@
 $def with ()
+$# "$def with (arg1, ...)" MUST be the first line. See documentation on web/template.py for details
+<script src="/static/js/map.js"></script>
 <h3 class="ui center aligned header">Map</h3>
 <div id="output">
     <canvas id="canvas"></canvas>
@@ -47,9 +49,11 @@ $def with ()
             </div>
         </div>
     </div>
-    <div id="sidebar">
-        <h4 id="selectionName">No selection</h4>
-        <h5 id="selectionNumber"></h5>
+    <div id="sel_bar">
+        <div id="sel_titles">
+            <h4>No selection</h4>
+            <h5>&nbsp;</h5>
+        </div>
         <div id="selectionInfo" class="ui styled fluid accordion">
             <div class="title">
                 <i class="dropdown icon"></i>
@@ -104,12 +108,48 @@ $def with ()
         </div>
     </div>
 </div>
+<div class="ui modal ports">
+    <div class="header">Port <span id="port_number"></span></div>
+    <div class="content">
+        <table class="ui table">
+            <tr><td class="right aligned">Use Name Translation:</td><td><div class="ui fitted toggle checkbox"><input id="port_active" type="checkbox"><label></label></div></td></tr>
+            <tr><td class="right aligned">Default Name:</td><td id="port_name"></td></tr>
+            <tr><td class="right aligned">Default Description:</td><td id="port_description"></td></tr>
+            <tr>
+                <td class="right aligned">Alias Name:</td>
+                <td>
+                    <div class="ui input" data-content="A custom alias to override the default name">
+                        <input placeholder="port name" id="port_alias_name" type="text">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="right aligned">Alias Description:</td>
+                <td>
+                    <div class="ui input" data-content="A custom alias to override the default description">
+                        <input placeholder="port description" id="port_alias_description" type="text">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="actions">
+        <div class="ui blue ok button">
+            <i class="save icon"></i>
+            Save
+        </div>
+        <div class="ui red cancel button">
+            <i class="cancel icon"></i>
+            Cancel
+        </div>
+    </div>
+</div>
 <div class="ui message transition visible">
   <i class="close icon"></i>
   <div class="header">
     Demonstration
   </div>
-  <p>This is real network data anonymized for privacy, and the database is read-only.</p>
+  <p>This is a subset of real network data, anonymized for privacy. The database is read-only and changes will not be saved.</p>
 </div>
 <script type="application/javascript">
 var body = document.getElementsByTagName("body")[0];
