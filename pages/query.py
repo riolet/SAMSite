@@ -17,14 +17,15 @@ class Query:
         addresses = []
 
         get_data = web.input()
+        address_str = get_data.get('address', None)
+        if address_str is not None:
+            addresses = address_str.split(",")
+
         # print("-"*50)
         # print("Query: get_data is")
         # print(get_data)
         # print("requesting data on: ")
-        # address_str = get_data.get('address', None)
-        # if address_str is not None:
-        #     addresses = address_str.split(",")
-        #     for i in addresses:
+        #    for i in addresses:
         #         print("\t" + i)
         # else:
         #     print("\troot nodes")
