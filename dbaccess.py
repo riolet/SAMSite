@@ -392,21 +392,7 @@ def getNodeInfo(*address):
 
 
 def setNodeInfo(address, data):
-    print("-"*50)
-    print("Setting node info!")
-    ips = address.split(".")
-    print("type data: " + str(type(data)))
-    print(data)
-    print("-"*50)
-    if len(ips) == 1:
-        common.db.update('Nodes8', {"address": ips[0]}, **data)
-    if len(ips) == 2:
-        common.db.update('Nodes16', {"parent8": ips[0], "address": ips[1]}, **data)
-    if len(ips) == 3:
-        common.db.update('Nodes24', {"parent8": ips[0], "parent16": ips[1], "address": ips[2]}, **data)
-    if len(ips) == 4:
-        common.db.update('Nodes32', {"parent8": ips[0], "parent16": ips[1],
-                                     "parent24": ips[2], "address": ips[3]}, **data)
+    pass
 
 
 def getPortInfo(port):
@@ -431,24 +417,7 @@ WHERE portLUT.port IN {0}
 
 
 def setPortInfo(data):
-    # update portAliasLUT database of names to include the new information
-    exists = common.db.select('portAliasLUT', what="1", where={"port": data['port']})
-    if len(exists) == 1:
-        common.db.update('portAliasLUT',
-                         {"port": data['port']},
-                         name=data['alias_name'],
-                         description=data['alias_description'])
-    else:
-        common.db.insert('portAliasLUT', port=data.port, name=data.alias_name, description=data.alias_description)
-
-    # update portLUT database of default values to include the missing information
-    exists = common.db.select('portLUT', what="1", where={"port": data['port']})
-    if len(exists) == 1:
-        common.db.update('portLUT',
-                         {"port": data['port']},
-                         active=data['active'])
-    else:
-        common.db.insert('portLUT', port=data.port, active=data['active'], tcp=1, udp=1, name="", description="")
+    pass
 
 
 def printLink(row):
