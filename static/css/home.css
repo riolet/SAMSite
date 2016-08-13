@@ -13,3 +13,8 @@ body {
 #screen {
     border-width: 3px;
 }
+
+.footer a {
+    color: white;
+    border-bottom: 1px solid white;
+}
