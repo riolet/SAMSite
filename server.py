@@ -6,8 +6,7 @@ import web
 
 # Manage routing from here. Regex matches URL and chooses class by name
 urls = (
-    # '/', 'pages.overview.Overview',  # matched groups (in parens) are sent as arguments
-    '/', 'pages.map.Map',  # Omit the overview page and go straight to map (no content in overview anyway)
+    '/', 'pages.home.Home',
     '/overview', 'pages.overview.Overview',
     '/demo', 'pages.map.Map',
     '/about', 'pages.about.About',
