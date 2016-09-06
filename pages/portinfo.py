@@ -2,6 +2,8 @@ import json
 import dbaccess
 import web
 
+# This class is for getting the aliases for a port number
+
 
 class Portinfo:
     def GET(self):
@@ -25,6 +27,6 @@ class Portinfo:
         web.header("Content-Type", "application/json")
 
         get_data = web.input()
-        dbaccess.setPortInfo(get_data)
+        # dbaccess.setPortInfo(get_data)
 
         return json.dumps({"code": 0, "message": ""})
