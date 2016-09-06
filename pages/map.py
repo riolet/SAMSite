@@ -22,6 +22,6 @@ class Map:
                                                 '/static/js/map_events.js',
                                                 '/static/js/timerange.js',
                                                 '/static/nouislider/nouislider.min.js'])) \
-               + str(common.render._header(common.navbar, self.pageTitle)) \
+               + str(common.render._header(common.navbar, "Demo")) \
                + str(common.render.map()) \
                + str(common.render._tail())

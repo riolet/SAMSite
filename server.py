@@ -10,6 +10,7 @@ urls = (
     '/', 'pages.map.Map',  # Omit the overview page and go straight to map (no content in overview anyway)
     '/overview', 'pages.overview.Overview',
     '/demo', 'pages.map.Map',
+    '/about', 'pages.about.About',
     '/stats', 'pages.stats.Stats',
     '/nodes', 'pages.nodes.Nodes',
     '/links', 'pages.links.Links',
