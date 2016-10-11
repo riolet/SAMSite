@@ -16,7 +16,7 @@ $def with (title)
     </div>
     <div class="ui raised segment">
         <h2 class="ui dividing  header">Current Limitations</h2>
-        <p>The data used by SAM is currently limited to IPs and ports for TCP traffic data, with all other information is discarded.  SAM is capable of importing data from PaloAlto syslog files, and from nfcapd binary files.  Creating an importer for your own log files currently requires adapting an existing python script.  This is an intentional simplification of the problem and more options will be available in the future.</p>
+        <p>The data used by SAM is currently limited to IPs and ports for TCP traffic data, with all other information is discarded.  SAM is capable of importing data from PaloAlto syslog files, and from nfcapd binary files.  There are also Cisco ASA, and AWS VPC Flow log importers courtesy of contributor Emre. Creating an importer for your own log files is as simple as inheriting from BaseImporter in importer_base.py and overriding the translate function.</p>
         <p>SAM is also currently limited to using MySQL for its database and, again, you will have more options in the future. </p>
     </div>
     <div class="ui raised segment">
