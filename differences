@@ -8,6 +8,8 @@ common.py
 * navbar includes about page
 
 /pages/{about,home}.py
+/pages/map.py
+* pageTitle = "Demo"
 
 /pages/* POST
 * comment out the actual dbaccess.* operations
