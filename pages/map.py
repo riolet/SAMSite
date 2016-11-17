@@ -11,8 +11,7 @@ class Map:
                                                     '/static/css/timerange.css',
                                                     '/static/nouislider/nouislider.css',
                                                     '/static/nouislider/nouislider.pips.css'],
-                                       scripts=['/static/js/tablesort.js',
-                                                '/static/js/map.js',
+                                       scripts=['/static/js/map.js',
                                                 '/static/js/map_node.js',
                                                 '/static/js/map_links.js',
                                                 '/static/js/map_data.js',
@@ -22,6 +21,6 @@ class Map:
                                                 '/static/js/map_events.js',
                                                 '/static/js/timerange.js',
                                                 '/static/nouislider/nouislider.min.js'])) \
-               + str(common.render._header(common.navbar, "Demo")) \
+               + str(common.render._header(common.navbar, self.pageTitle)) \
                + str(common.render.map()) \
                + str(common.render._tail())

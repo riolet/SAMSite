@@ -7,15 +7,17 @@ import web
 # Manage routing from here. Regex matches URL and chooses class by name
 urls = (
     '/', 'pages.home.Home',
-    '/overview', 'pages.overview.Overview',
-    '/demo', 'pages.map.Map',
+    '/map', 'pages.map.Map',
     '/about', 'pages.about.About',
     '/stats', 'pages.stats.Stats',
     '/nodes', 'pages.nodes.Nodes',
     '/links', 'pages.links.Links',
     '/details', 'pages.details.Details',
+    '/details/(.+)', 'pages.details.Details',
     '/portinfo', 'pages.portinfo.Portinfo',
     '/nodeinfo', 'pages.nodeinfo.Nodeinfo',
+    '/metadata', 'pages.metadata.Metadata',
+    '/table', 'pages.table.Table',
 )
 
 app = web.application(urls, globals(), autoreload=False)

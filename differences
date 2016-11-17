@@ -1,0 +1,29 @@
+Differences between this repo and SAM repo
+
+[wsgi]server.py
+* value of urls (+{home,about} page)
+
+common.py
+* navbar includes demo page instead of map page
+* navbar includes about page
+
+/pages/{about,home}.py
+
+/pages/* POST
+* comment out the actual dbaccess.* operations
+
+/templates/{about,home}.html
+/templates/map.html
+* the demo data notification
+
+
+/static/css/home.css
+/static/css/map.css
+* the demo data notification positioning (bottom of file)
+
+/static/img/demo_screen.png
+
+/static/js/{about,home}.js
+/static/js/map.js
+* the demo data notification close function (in init())
+
