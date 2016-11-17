@@ -8,7 +8,7 @@ import web
 # Manage routing from here. Regex matches URL and chooses class by name
 urls = (
     '/', 'pages.home.Home',
-    '/demo', 'pages.map.Map',
+    '/map', 'pages.map.Map',
     '/about', 'pages.about.About',
     '/stats', 'pages.stats.Stats',
     '/nodes', 'pages.nodes.Nodes',

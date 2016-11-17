@@ -8,7 +8,7 @@ navbar = [
     {
         "name": "Demo",
         "icon": "sitemap",
-        "link": "/demo"
+        "link": "/map"
     },
     {
         "name": "Stats",
