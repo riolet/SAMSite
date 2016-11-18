@@ -44,7 +44,7 @@ class Portinfo:
 
         get_data = web.input()
         if 'port' in get_data:
-            dbaccess.set_port_info(get_data)
+            # dbaccess.set_port_info(get_data)
             result = "Success!"
         else:
             result = "ERROR: 'port' missing from request."
