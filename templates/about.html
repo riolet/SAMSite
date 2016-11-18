@@ -5,15 +5,57 @@ $def with (title)
         <h2 class="ui dividing header">What is SAM?</h2>
         <p>System Architecture Mapper (SAM) is an interactive network-traffic mapping tool.</p>
         <p>It is designed to show how different nodes interact on a network, based off a log of connections formed over a period of time.</p>
-        <p>At it’s simplest, SAM will show you which IP addresses are connecting to which other IPs.  One step above that and you’re can see which ports are being connected to on which hosts, and start to filter your graph based on that information.</p>
-        <p>The purpose is to give a visual representation of the state of a network and its traffic.  This is useful in both an exploratory and an evaluatory sense.  In the exploratory sense, it gives you reference for the current state of affairs and allows you to see where traffic is going.  In the evaluatory sense, you can compare the network data with the architected intention of your network and see whether the system is working as intended.</p>
+        <p>SAM is primarily a map of connections between IP addresses on ports.  At a high level it provides an easy-to-understand visualization of your network.  As you explore the features of SAM, you can begin to dissect your network and see the activity that happens on particular ports, or compare the activity levels of different parts of your network over time.</p>
+        <p>This is useful in both an exploratory and an evaluatory sense. In the exploratory sense, it gives you a reference point for the current state of affairs and allows you to see where traffic is going. In the evaluatory sense, you can compare the network data with the architected intention of your network and see whether the system is working as intended.</p>
     </div>
+</div>
+<div id="features" class="ui container">
     <div class="ui raised segment">
-        <h2 class="ui dividing header">Current State of Affairs</h2>
-        <p>As it is now, SAM maps IP addresses in layers based on subnets /8 /16 /24 and /32 by following a fractal 16x16 grid.  Connections between nodes (subnets or hosts) are drawn as arrows pointing from source to destination IPs.  When you zoom in to the host level, you can also view the ports on which each host is being connected to.</p>
-        <p>Once you’re familiar with the network, you can jump directly to an IP by searching for that host or subnet specifically.  Searching is done using the search bar at the top by using the dotted decimal notation.  To reset your view just tap ‘f’ over the map.  Clicking the gear next to the search bar opens up a few options including filtering by port number.</p>
-        <p>The sidebar on the right shows a few more details about the node you have selected.  Connections coming into the node, connections going out from the node, and any ports in use on the node.  The ports list can be enlightening as to what services a particular server is offering.  For example, 80 and 443 are http[s] and suggest a host is acting as a webserver.  If there are connections to 3306, that host is probably also accepting MySQL connections.</p>
+        <h2 class="ui dividing centered header">SAM provides three views into your network:</h2>
+        <div class="ui divided three column stackable grid">
+            <div class="column">
+                <div class="content">
+                    <h3 class="header">Map</h3>
+                </div>
+                <a href="/static/img/screen_0.2_map.png" class="ui bordered image">
+                    <img src="/static/img/screen_0.2_map.png">
+                </a>
+                <div class="content">
+                    <div class="description">
+                        <p>As it is now, SAM maps IP addresses in layers based on subnets /8 /16 /24 and /32 by following a fractal 16x16 grid.  Connections between nodes (subnets or hosts) are drawn as arrows pointing from source to destination IPs.  When you zoom in to the host level, you can also view the ports on which each host is being connected to.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <h3 class="header">Table View</h3>
+                </div>
+                <a href="/static/img/screen_0.2_table.png" class="ui bordered image">
+                    <img src="/static/img/screen_0.2_table.png">
+                </a>
+                <div class="content">
+                    <div class="description">
+                        <p>Once you’re familiar with the network, you can jump directly to an IP by searching for that host or subnet specifically.  Searching is done using the search bar at the top by using the dotted decimal notation.  To reset your view just tap ‘f’ over the map.  Clicking the gear next to the search bar opens up a few options including filtering by port number.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                    <h3 class="ui dividing header">Host Details</h3>
+                </div>
+                <a href="/static/img/screen_0.2_meta.png" class="ui bordered image">
+                    <img src="/static/img/screen_0.2_meta.png">
+                </a>
+                <div class="content">
+                    <div class="description">
+                        <p>The sidebar on the right shows a few more details about the node you have selected.  Connections coming into the node, connections going out from the node, and any ports in use on the node.  The ports list can be enlightening as to what services a particular server is offering.  For example, 80 and 443 are http[s] and suggest a host is acting as a webserver.  If there are connections to 3306, that host is probably also accepting MySQL connections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+<div class="ui text container">
     <div class="ui raised segment">
         <h2 class="ui dividing  header">Current Limitations</h2>
         <p>The data used by SAM is currently limited to IPv4 and TCP traffic data, with all other information is discarded.  SAM is capable of importing data from PaloAlto syslog files, and from nfcapd binary files.  There are also Cisco ASA, and AWS VPC Flow log importers courtesy of contributor Emre. Creating an importer for your own log files is as simple as inheriting from BaseImporter in importer_base.py and overriding the translate function.</p>

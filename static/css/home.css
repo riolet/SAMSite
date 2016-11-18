@@ -22,6 +22,16 @@ body {
     margin: 0;
 }
 
+#features {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#features img {
+    margin-bottom: 0.5em;
+    border-width: 3px;
+}
+
 .footer a {
     color: white;
     border-bottom: 1px solid white;
