@@ -6,7 +6,7 @@ base_path = os.path.dirname(__file__)
 
 navbar = [
     {
-        "name": "Demo",
+        "name": "Map",
         "icon": "sitemap",
         "link": "/map"
     },

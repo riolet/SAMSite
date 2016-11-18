@@ -2,7 +2,7 @@ import common
 
 
 class Map:
-    pageTitle = "Demo"
+    pageTitle = "Map"
 
     # handle HTTP GET requests here.  Name gets value from routing rules above.
     def GET(self):
