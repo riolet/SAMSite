@@ -10,8 +10,16 @@ body {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-#screen {
+#tabs img {
     border-width: 3px;
+}
+
+#tabs div.tab {
+    padding: 0;
+}
+
+#tabs .menu {
+    margin: 0;
 }
 
 .footer a {

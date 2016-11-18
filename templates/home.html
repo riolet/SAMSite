@@ -7,7 +7,7 @@ $# "$def with (arg1, ...)" MUST be the first line. See template.py for details
     </div>
 </div>
 <div class="ui container">
-    <div class="ui internally celled grid">
+    <div class="ui internally celled stackable grid">
         <div class="row">
             <div class="eight wide column">
                 <p>SAM is an interactive network-traffic mapping tool.</p>
@@ -16,9 +16,31 @@ $# "$def with (arg1, ...)" MUST be the first line. See template.py for details
                 <p>Augmenting the map, is a spreadsheet view of the network and a metadata view for a specific node, displaying info about the nodes and giving you the concrete numbers you need to make informed decisions.</p>
                 <p>For more information about SAM, read the <a href="/about">about</a> page.  For a hands-on experience, try the <a href="/map">demo</a>!</p>
             </div>
-            <div class="eight wide column"><img class="ui fluid bordered image" id="screen" src="/static/img/demo_screen.png"></div>
+            <div id="tabs" class="bottom aligned eight wide column">
+                <div class="ui top attached active tab segment" data-tab="map">
+                    <img id="scr_map" class="ui fluid bordered image" src="/static/img/screen_0.2_map.png">
+                </div>
+                <div class="ui top attached tab segment" data-tab="ports">
+                    <img id="scr_ports" class="ui fluid bordered image" src="/static/img/screen_0.2_ports.png">
+                </div>
+                <div class="ui top attached tab segment" data-tab="table">
+                    <img id="scr_table" class="ui fluid bordered image" src="/static/img/screen_0.2_table.png">
+                </div>
+                <div class="ui top attached tab segment" data-tab="metadata">
+                    <img id="scr_metadata" class="ui fluid bordered image" src="/static/img/screen_0.2_meta.png">
+                </div>
+                <div class="ui fluid four item text menu">
+                    <a class="active item" data-tab="map"><i class="large map icon"></i></a>
+                    <a class="item" data-tab="ports"><i class="large remove from calendar icon"></i></a>
+                    <a class="item" data-tab="table"><i class="large table icon"></i></a>
+                    <a class="item" data-tab="metadata"><i class="large tasks icon"></i></a>
+                </div>
+            </div>
         </div>
     </div>
+    <!--
+    -----  Feature Links  -----
+    -->
     <div class="ui divider"></div>
     <div class="ui internally celled grid">
         <div class="centered row">
@@ -28,8 +50,11 @@ $# "$def with (arg1, ...)" MUST be the first line. See template.py for details
         </div>
     </div>
 </div>
-<div class="ui basic fullscreen modal">
-    <div id="modal" class="image content">
-        <img class="ui centered image" src="/static/img/demo_screen.png">
+<!--
+-----  Image view popup  -----
+-->
+<div class="ui basic fullscreen image modal">
+    <div id="imageviewer" class="image content">
+        <img id="modal_image" class="ui centered image" width="1150" height="600" src="/static/img/screen_0.2_map.png">
     </div>
 </div>
