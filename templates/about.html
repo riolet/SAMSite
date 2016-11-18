@@ -15,40 +15,49 @@ $def with (title)
         <div class="ui divided three column stackable grid">
             <div class="column">
                 <div class="content">
-                    <h3 class="header">Map</h3>
+                    <h3 class="ui centered header">Map</h3>
                 </div>
                 <a href="/static/img/screen_0.2_map.png" class="ui bordered image">
                     <img src="/static/img/screen_0.2_map.png">
                 </a>
                 <div class="content">
                     <div class="description">
-                        <p>As it is now, SAM maps IP addresses in layers based on subnets /8 /16 /24 and /32 by following a fractal 16x16 grid.  Connections between nodes (subnets or hosts) are drawn as arrows pointing from source to destination IPs.  When you zoom in to the host level, you can also view the ports on which each host is being connected to.</p>
+                        <p>The main view into your network, SAM’s map depicts a network by grouping the hosts into subnets at /8 /16 and /24, and arranging them in a 16x16 grid.  Connections formed between hosts are drawn as arrows pointing from source to destination, or to a specific port when zoomed in fully.</p>
+                        <p>The map allows for filtering by ports or time periods, searching for a host or subnet, and turning the visibility of client and server nodes on and off.</p>
+                        <p>By selecting a node in the map you can see extra information about it, including the ability to rename it, or follow a link to the complete host information.</p>
                     </div>
                 </div>
             </div>
             <div class="column">
                 <div class="content">
-                    <h3 class="header">Table View</h3>
+                    <h3 class="ui centered header">Table View</h3>
                 </div>
                 <a href="/static/img/screen_0.2_table.png" class="ui bordered image">
                     <img src="/static/img/screen_0.2_table.png">
                 </a>
                 <div class="content">
                     <div class="description">
-                        <p>Once you’re familiar with the network, you can jump directly to an IP by searching for that host or subnet specifically.  Searching is done using the search bar at the top by using the dotted decimal notation.  To reset your view just tap ‘f’ over the map.  Clicking the gear next to the search bar opens up a few options including filtering by port number.</p>
+                        <p>The Table View provides information on groups of hosts, with aggregate information about the links between them.  It uses transforms the network data into a spreadsheet view to isolate the hosts and subnets that have the properties you’re looking for.</p>
+                        <p>The Table View has the most sophisticated filtering capabilities and allows you to search and sort all nodes based on highly customizable criteria such as environment (production? dev?), it’s role as a client or server, and user-defined tags.</p>
                     </div>
                 </div>
             </div>
             <div class="column">
                 <div class="content">
-                    <h3 class="ui dividing header">Host Details</h3>
+                    <h3 class="ui centered header">Host Details</h3>
                 </div>
                 <a href="/static/img/screen_0.2_meta.png" class="ui bordered image">
                     <img src="/static/img/screen_0.2_meta.png">
                 </a>
                 <div class="content">
                     <div class="description">
-                        <p>The sidebar on the right shows a few more details about the node you have selected.  Connections coming into the node, connections going out from the node, and any ports in use on the node.  The ports list can be enlightening as to what services a particular server is offering.  For example, 80 and 443 are http[s] and suggest a host is acting as a webserver.  If there are connections to 3306, that host is probably also accepting MySQL connections.</p>
+                        <p>Host Details provides all the available information on an individual host and allows you to add more information.  Host information covers tags, environment, alias, incoming and outgoing connections, ports used, and (for subnets) active child nodes.</p>
+                        <p>For a specific host you can:</p>
+                        <ul>
+                            <li>Add an alias to give the host a more memorable moniker, such as “Pacific Datacenter” or “Testing subnet.”</li>
+                            <li>Add one or more tags with supplementary information. Some intended examples are things like “48GB” or “Project SAM.”</li>
+                            <li>Set the environment, a single value, usually inherited from a higher subnet meaning “production” or “dev” or another custom label.</li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -32,6 +32,10 @@ body {
     border-width: 3px;
 }
 
+#features h3 {
+    margin: 0.5em 0;
+}
+
 .footer a {
     color: white;
     border-bottom: 1px solid white;
