@@ -32,7 +32,7 @@ $def with (title)
                 <div class="content">
                     <h3 class="ui centered header">Table View</h3>
                 </div>
-                <a href="/static/img/screen_0.2_table.png" class="ui bordered image">
+                <a href="/table?page=1&page_size=10&sort=0,asc&filters=1%3B1%3Bproduction|6%3B1%3B1%3B48GB|3%3B1%3B2%3B443" class="ui bordered image">
                     <img src="/static/img/screen_0.2_table.png">
                 </a>
                 <div class="content">
@@ -46,7 +46,7 @@ $def with (title)
                 <div class="content">
                     <h3 class="ui centered header">Host Details</h3>
                 </div>
-                <a href="/static/img/screen_0.2_meta.png" class="ui bordered image">
+                <a href="/metadata?ip=21.66.10.231" class="ui bordered image">
                     <img src="/static/img/screen_0.2_meta.png">
                 </a>
                 <div class="content">
@@ -68,18 +68,17 @@ $def with (title)
     <div class="ui raised segment">
         <h2 class="ui dividing  header">Current Limitations</h2>
         <p>The data used by SAM is currently limited to IPv4 and TCP traffic data, with all other information is discarded.  SAM is capable of importing data from PaloAlto syslog files, and from nfcapd binary files.  There are also Cisco ASA, and AWS VPC Flow log importers courtesy of contributor Emre. Creating an importer for your own log files is as simple as inheriting from BaseImporter in importer_base.py and overriding the translate function.</p>
-        <p>SAM is also currently limited to using MySQL for its database and, again, you will have more options in the future. </p>
+        <p>SAM is also currently limited to using MySQL for its database.  This may also change in the future as needed.</p>
     </div>
     <div class="ui raised segment">
-        <h2 class="ui dividing header">Next Steps</h2>
-        <p>A network log will often record information such as IPs, ports, protocol used, payload size, number of connections, duration of connections, timestamps, and more to allow many more dimensions of information to be displayed on the map.  This will provide an ever-increasingly comprehensive visualization of network traffic.</p>
-        <p>Many of these options will be displayed visually as well. For example different colored connections for different protocols, or line thicknesses for number of connections, or total data transfered.</p>
-        <p>One of the next features to be developed will be aliasing for hosts and ports so that you can assign more meaningful names to the nodes in the graph.  Instead of subnet 24.0.0.0/8, you could read West Office or instead of 136.72.44.16, you could read Jamie.</p>
-    </div>
-    <div class="ui raised segment">
-        <h2 class="ui dividing header">The Future</h2>
-        <p>SAM also maps a mere snapshot of a network, but it need not be merely a snapshot.  In the future the service could continuously integrate new data from a live network and provide realtime visual feedback on the health of your network.</p>
-        <p>SAM can go beyond merely reporting network data as well.  SAM will eventually be able to collect more detailed information about hosts, such as their resource usage or idle time.</p>
-        <p>Another possibility is to give administrative capabilities to SAM and use the network map as a control panel to block and allow IP addresses, trigger the rebooting or the reimaging of nodes, or configuring quotas for different types of traffic or network jobs.</p>
+        <h2 class="ui dividing header">Coming Soon...</h2>
+        <h3>Live Mode</h3>
+        <p>The biggest upcoming enhancement, almost ready, is to give SAM “live” ability wherein SAM is actively receiving data and building up it’s database.  This would allow you to use the most up-to-date information possible in fewer steps.  Fewer steps means a simpler workflow, fewer mistakes, and faster results.  Expect this feature soon!</p>
+        <h3>UDP Connections</h3>
+        <p>One of the next additions will be support for UDP protocol data.  More generally, a network log will often record additional information such as, protocol used, payload size, duration of connections, and if a connections is rejected under security rules.  All of that is just thrown away right now, but gradually using more of the available information will provide an increasingly comprehensive visualization of network traffic.</p>
+        <h3>Unified Filtering</h3>
+        <p>The Table View page provides a sophisticated filter that is not currently available to map data.  In the next version of this software, the filters will be unified across views, and made faster, allowing maximum control over what is displayed.  There will also be a way to save your custom filters as a preset with a name, to easily switch between views.</p>
+        <h3>Downloadable Data</h3>
+        <p>Replicating what you can do in dedicated spreadsheet software is not the goal of SAM, so we intend to make the results of a table view search downloadable in spreadsheet-friendly format.</p>
     </div>
 </div>
