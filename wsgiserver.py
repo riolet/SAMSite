@@ -9,6 +9,7 @@ urls = (
     '/', 'pages.home.Home',
     '/map', 'pages.map.Map',
     '/about', 'pages.about.About',
+    '/support', 'pages.support.Support',
     '/stats', 'pages.stats.Stats',
     '/nodes', 'pages.nodes.Nodes',
     '/links', 'pages.links.Links',

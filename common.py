@@ -30,6 +30,11 @@ navbar = [
         "icon": "info",
         "link": "/about"
     },
+    {
+        "name": "Support Plans",
+        "icon": "umbrella",
+        "link": "/support"
+    },
 ]
 
 # tell renderer where to look for templates
