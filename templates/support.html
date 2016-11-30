@@ -12,7 +12,7 @@ $def with ()
         <div class="row">
             <div class="eight wide column">
                 <h3 class="ui header">Open Source Software</h3>
-                <p>At Riolet we believe in the importance of open source software. SAM's source code is available to anyone who is interested in it, under the GPL version 3.</p>
+                <p>At Riolet we believe in the importance of open source software. SAM's source code is available to anyone who is interested in it, licenced under the GPL.</p>
                 <p>Our enterprise support plans include setting up SAM for you, demonstrations and instructions on how to get the most out of the software, priority bug fixes and user support, and even influence into SAM’s continued development as it grows to maturity.</p>
                 <a class="ui large button" href="#plans">Check out the plans</a>
             </div>
@@ -28,6 +28,9 @@ $def with ()
 <div class="ui container">
     <a name="plans"></a>
     <div class="ui centered cards">
+        <!--
+                BRONZE level
+        -->
         <div class="blue card">
             <div class="content">
                 <div class="ui centered header">Bronze Level</div>
@@ -42,19 +45,37 @@ $def with ()
                     </div>
                 </div>
                 <h4 class="ui sub header">Features</h4>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="red remove icon"></i>Excluded Feature</div>
-                <div class="item"><i class="red remove icon"></i>Excluded Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Map Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Metadata Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Table Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Log File Support:
+                    <ul>
+                        <li>Palo Alto syslogs</li>
+                        <li>nfdump logs</li>
+                    </ul>
+                </div>
+                <div class="item"><i class="green checkmark icon"></i>Hostnames</div>
+                <div class="item"><i class="green checkmark icon"></i>Host Tagging</div>
+                <div class="item"><i class="green checkmark icon"></i>Updates and fixes</div>
                 <h4 class="ui sub header">Support</h4>
-                <div class="item"><i class="red remove icon"></i>Excluded Feature</div>
-                <div class="item"><i class="red remove icon"></i>Excluded Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Access to source code</div>
+                <div class="item"><i class="green checkmark icon"></i>Standard bug fixes</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Priority bug fixes</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Deployment and setup</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Training</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Feature requests</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Cloud deployment</div>
                 <h4 class="ui sub header">&nbsp;</h4>
                 <div class="item">&nbsp;</div>
+                <div class="item">&nbsp;</div>
             </div>
-            <div class="ui bottom attached button">
+            <div class="ui bottom attached disabled button">
                 Buy Now
             </div>
         </div>
+        <!--
+                SILVER level
+        -->
         <div class="blue card">
             <div class="content">
                 <div class="ui centered header">Silver Level</div>
@@ -69,19 +90,38 @@ $def with ()
                     </div>
                 </div>
                 <h4 class="ui sub header">Features</h4>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="red remove icon"></i>Excluded Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Map Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Metadata Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Table Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Log File Support:
+                    <ul>
+                        <li>Palo Alto syslogs</li>
+                        <li>nfdump logs</li>
+                        <li>your log format</li>
+                    </ul>
+                </div>
+                <div class="item"><i class="green checkmark icon"></i>Hostnames</div>
+                <div class="item"><i class="green checkmark icon"></i>Host Tagging</div>
+                <div class="item"><i class="green checkmark icon"></i>Updates and fixes</div>
                 <h4 class="ui sub header">Support</h4>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="red remove icon"></i>Excluded Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Access to source code</div>
+                <div class="item"><i class="green checkmark icon"></i>Standard bug fixes</div>
+                <div class="item"><i class="green checkmark icon"></i>Priority bug fixes</div>
+                <div class="item"><i class="green checkmark icon"></i>Deployment and setup</div>
+                <div class="item"><i class="green checkmark icon"></i>Training</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Feature requests</div>
+                <div class="disabled item"><i class="disabled checkmark icon"></i>Cloud deployment</div>
                 <h4 class="ui sub header">&nbsp;</h4>
                 <div class="item">&nbsp;</div>
+                <div class="item">&nbsp;</div>
             </div>
-            <div class="ui bottom attached button">
+            <div class="ui bottom attached disabled button">
                 Buy Now
             </div>
         </div>
+        <!--
+                GOLD level
+        -->
         <div class="blue card">
             <div class="content">
                 <div class="ui centered header">Gold Level</div>
@@ -96,16 +136,29 @@ $def with ()
                     </div>
                 </div>
                 <h4 class="ui sub header">Features</h4>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Map Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Metadata Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Table Mode</div>
+                <div class="item"><i class="green checkmark icon"></i>Log File Support:
+                    <ul><li>Palo Alto syslogs</li>
+                    <li>nfdump logs</li>
+                    <li>your log format</li></ul></div>
+                <div class="item"><i class="green checkmark icon"></i>Hostnames</div>
+                <div class="item"><i class="green checkmark icon"></i>Host Tagging</div>
+                <div class="item"><i class="green checkmark icon"></i>Updates and fixes</div>
                 <h4 class="ui sub header">Support</h4>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
-                <div class="item"><i class="green checkmark icon"></i>Included Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Access to source code</div>
+                <div class="item"><i class="green checkmark icon"></i>Standard bug fixes</div>
+                <div class="item"><i class="green checkmark icon"></i>Priority bug fixes</div>
+                <div class="item"><i class="green checkmark icon"></i>Deployment and setup</div>
+                <div class="item"><i class="green checkmark icon"></i>Training</div>
+                <div class="item"><i class="green checkmark icon"></i>Feature requests</div>
+                <div class="item"><i class="green checkmark icon"></i>Cloud deployment</div>
                 <h4 class="ui sub header">Extra</h4>
-                <div class="item"><i class="green checkmark icon"></i>Bonus Feature</div>
+                <div class="item"><i class="green checkmark icon"></i>Product influence</div>
+                <div class="item"><i class="green checkmark icon"></i>Direct developer access</div>
             </div>
-            <div class="ui bottom attached button">
+            <div class="ui bottom attached disabled button">
                 Buy Now
             </div>
         </div>
@@ -116,22 +169,11 @@ $def with ()
 -->
 <div class="ui divider"></div>
 <div class="ui vertical stripe segment">
-    <div class="ui two column middle aligned stackable grid container">
-        <div class="row">
-            <div class="center aligned eight wide column">
-                <h3 class="ui header">Additional</h3>
-                <p>Any</p>
-                <p>other</p>
-                <p>support</p>
-                <p>information</p>
-            </div>
-            <div class="center aligned eight wide column">
-                <h3 class="ui header">Information</h3>
-                <p>can</p>
-                <p>be</p>
-                <p>written</p>
-                <p>here.</p>
-            </div>
-        </div>
+    <div class="ui text container">
+            <h3 class="ui header">Questions?</h3>
+            <p>Get in touch!  We would be happy to answer any questions you have about SAM, how it can help you, and to find the best solution for your needs.</p>
+            <p><i class="mail icon"></i>: info@riolet.com</p>
+            <p><i class="phone icon"></i>: 778-819-8477</p>
+            <p>All prices listed in Canadian (CAD) dollars.</p>
     </div>
 </div>

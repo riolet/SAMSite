@@ -50,3 +50,20 @@ body {
 .ui.cards.centered {
     margin: 0em 0em;
 }
+
+.ui.cards ul {
+    font-size: 80%;
+    line-height: 120%;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+    height: 3.7em;
+}
+
+.ui.segment .text.container {
+    font-size: 1rem;
+}
+
+/* excluded features */
+.disabled.item {
+    color: rgba(0, 0, 0, 0.4);
+}
