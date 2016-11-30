@@ -1,6 +1,12 @@
+html {
+    font-size: 17px;
+}
 body {
     background-color: #CCFFEB;
-    font-size: 120%;
+    font-size: 100%;
+}
+#navbar {
+    font-size: 14px;
 }
 .ui.footer.segment {
     margin: 5em 0em 0em;
@@ -39,4 +45,8 @@ body {
 .footer a {
     color: white;
     border-bottom: 1px solid white;
+}
+
+.ui.cards.centered {
+    margin: 0em 0em;
 }
